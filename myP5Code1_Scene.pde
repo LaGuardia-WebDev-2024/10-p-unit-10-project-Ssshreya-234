@@ -1,16 +1,16 @@
-var bakeryLabels = ["Crossiants","Baguettes"];
+var bakeryLabels = ["Pancake","Baguettes"];
 
 setup = function() {
 
   size(400, 400); 
   background(0,0,0,0);
 
-  var crossiantX = 60;
+  var PancakeX = 60;
   textSize(30);
 
-  while(crossiantX < 300){
-    text("🥐", crossiantX, 85);
-    crossiantX += 40;
+  while(PancakeX < 300){
+    text("🥞", PancakeX, 85);
+    PancakeX += 40;
   }
 
   textSize(15);

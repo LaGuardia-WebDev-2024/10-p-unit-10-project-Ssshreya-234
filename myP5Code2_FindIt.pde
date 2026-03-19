@@ -9,6 +9,13 @@ var planet = "🪐";
 var planetTotal = 3;
 var planetFound = 0;
 
+var x =0;
+while(x < 400){
+  text("😜", x, 340);
+  
+  x += 20;
+}
+
 setup = function() {
    size(600, 450); 
 
@@ -21,6 +28,14 @@ draw = function(){
     if(key == 'r'){
       reset();
     }
+    //draw the stars once
+    var x = 0
+    while(x < 380){
+      text("⭐️", x, 340);
+      text("⭐️", x-30, 340);
+      x += 60
+    }
+
    }
 
   display();
