@@ -3,6 +3,9 @@ var bakeryLabels = ["Pancake","Donut","Cupcake","Icecream"];
 setup = function() {
 
   size(400, 400); 
+}
+
+draw = function(){
   background(0,0,0,0);
 
   var PancakeX = 90;
@@ -39,25 +42,44 @@ var IcecreamX = 90;
     IcecreamX += 40;
   }
   
-var move = 1
-var drawstars = function(){
-  for (var i = 0; i < yPositions. length; i++) {
-    text("✰",xPostions[i], yPositions[i]);
-    xPostions[i]+= move;
-  }
-}
+
   textSize(15);
   text(bakeryLabels[0], 70, 105);
   text(bakeryLabels[1], 70, 185);
   text(bakeryLabels[2], 70, 260);
   text(bakeryLabels[3], 70, 340);
+
+  drawStars()
+
 }
 
-draw = function(){   
 
-}
 
 
 mouseClicked = function(){
+xPositions.push(mouseX);
+yPositions.push(mouseY);
 
+console.log("xPositions is" + xPositions);
+console.log("yPositions is" + yPositions);
+
+}
+
+var move = 1
+var xPositions =[100,150,300,330,400];
+var yPositions =[200,250];
+
+
+var drawStars = function(){
+  for (var i = 0; i < yPositions.length; i++) {
+    text("✰",xPositions[i], yPositions[i]);
+    xPositions[i]+= move;
+
+    if(xPositions[i]>600){
+      move = -1
+    }
+    if(xPositions[i] < -200){
+      move = 1
+    }
+  }
 }
